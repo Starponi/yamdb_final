@@ -1,4 +1,3 @@
-# .github/workflows/**main.yml**
 name: Django-app workflow
 
 on: [push]
@@ -45,6 +44,7 @@ jobs:
         - name: Push to Docker Hub
           uses: docker/build-push-action@v2
           with:
+            context: api_yamdb/
             push: true
             tags: shanik92/infra_actions:latest
 
