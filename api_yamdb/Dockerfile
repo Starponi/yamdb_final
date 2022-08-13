@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY ./api_yamdb .
 
-COPY ./api_yamdb/requirements.txt .
+COPY requirements.txt .
 
 RUN pip install -r requirements.txt --no-cache-dir
 
