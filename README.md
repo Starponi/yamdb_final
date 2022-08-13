@@ -2,7 +2,9 @@
 
 ![example workflow](https://github.com/Starponi/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
-ip адрес сервера:  http://51.250.97.70/admin
+ip адрес сервера:  
+http://51.250.97.70:8001/admin
+http://51.250.97.70:8001/redoc/
 
 
 
@@ -66,4 +68,10 @@ docker-compose exec web python manage.py createsuperuser
 Собрать статичные файлы:
 ```bash
 docker-compose exec web python manage.py collectstatic --no-input
+```
+## База данных
+В репозитории в директории /infra подготовлен файл fixtures.json, являющийся бэкапом с тестовыми записями.
+При желании можно заполнить базу тестовыми данными командой:
+```bash
+docker compose exec web python manage.py loaddata fixtures.json
 ```
